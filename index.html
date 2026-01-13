@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokyoQuest | Historical Walking Tours</title>
+    <meta name="description" content="Turn your smartphone into a historical compass. Explore hidden layers of Tokyo without the crowds.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0a192f',      /* Deep Navy */
+                        'brand-charcoal': '#121212',  /* Rich Black */
+                        'brand-surface': '#1e293b',   /* Card Background */
+                        'brand-gold': '#d4af37',      /* Muted Gold */
+                        'brand-text': '#f1f5f9',      /* Bright White-Grey (コントラスト向上) */
+                        'brand-muted': '#cbd5e1',     /* Lighter Muted Blue-Grey (読みやすさ向上) */
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.9)), url('assets/hero_bg.jpg')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Mobile Optimizations */
+        .text-shadow { text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        html { scroll-behavior: smooth; }
+        
+        /* Hide scrollbar for horizontal gallery */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* base settings for readability */
+        body { 
+            -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-brand-charcoal text-brand-text font-sans antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-brand-charcoal/95 backdrop-blur-md border-b border-brand-gold/20 shadow-lg">
+        <div class="px-5 py-4 flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="font-serif text-xl font-bold text-white tracking-wider">TokyoQuest</span>
+            </div>
+            <a href="#courses" class="bg-brand-gold text-brand-charcoal px-4 py-2 text-sm font-bold uppercase tracking-wide rounded-sm shadow-md hover:bg-white transition duration-300">
+                View Courses
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat px-5 pt-20">
+        <div class="text-center max-w-2xl mx-auto fade-in-up">
+            <p class="text-brand-gold font-bold tracking-[0.15em] mb-4 uppercase text-xs md:text-sm">
+                For the Cultured Traveler
+            </p>
+            
+            <h1 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6 text-white text-shadow">
+                Don't Just See Tokyo.<br>
+                <span class="text-brand-gold italic">Read Its History.</span>
+            </h1>
+            
+            <!-- 文字サイズをtext-lg (18px)に変更 -->
+            <p class="text-lg md:text-xl text-brand-text mb-8 font-normal leading-relaxed">
+                Turn your smartphone into a <strong>historical compass</strong>. Explore the hidden layers of Shibuya, Shinjuku, and Harajuku without the crowds.
+                <br><span class="text-base text-brand-muted mt-2 block">(No App Download Required)</span>
+            </p>
+            
+            <div class="flex flex-col gap-4 w-full max-w-xs mx-auto">
+                <a href="#courses" class="bg-brand-gold text-brand-charcoal px-6 py-4 text-lg font-bold uppercase tracking-wider rounded-sm shadow-lg hover:bg-white transition duration-300 w-full text-center">
+                    Select Your Area
+                </a>
+                <p class="text-brand-muted text-sm">Starting at just $12 / Course</p>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-brand-gold/50">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- The Problem & Solution -->
+    <section class="py-20 px-6 bg-brand-dark">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-14">
+                <h2 class="font-serif text-3xl text-white mb-5">Tired of "Top 10" Tourist Traps?</h2>
+                <!-- 文字サイズをtext-lg (18px)に変更 -->
+                <p class="text-brand-muted text-lg mb-4 leading-relaxed">
+                    <strong class="text-white">The Frustration:</strong> 
+                    You search online, but every guide points to the same crowded crossings and teenage fashion spots. You want to find the <em>soul</em> of Tokyo—its post-war resilience and quiet sanctuaries—but you don't know where to look.
+                </p>
+            </div>
+
+            <div class="relative mb-14 rounded-sm overflow-hidden border border-brand-gold/20 shadow-xl">
+                <img src="assets/narrative_img.jpg" alt="Quiet Tokyo Alley" class="w-full h-64 object-cover filter brightness-75">
+                <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/90 to-transparent p-5">
+                    <p class="font-serif text-white italic text-base">"Authenticity over Spectacle"</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="font-serif text-2xl text-brand-gold mb-4">The Solution: Controlled Serendipity</h3>
+                <!-- 文字サイズをtext-lg (18px)に変更 -->
+                <p class="text-brand-muted text-lg leading-relaxed mb-6">
+                    Unlike standard maps, TokyoQuest guides you with <strong>only distance and direction</strong>. 
+                </p>
+                <p class="text-brand-muted text-lg leading-relaxed">
+                    This encourages you to look up and explore the streets freely, ensuring you find the hidden gems curated by locals without getting lost.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated by Locals -->
+    <section class="py-16 px-6 bg-brand-charcoal border-t border-brand-gold/10">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
+            <div class="relative w-full md:w-1/2">
+                <img src="assets/curator_back.jpg" alt="Local Guide" class="w-full rounded-sm grayscale shadow-lg border border-brand-gold/20">
+                <div class="absolute top-3 left-3 bg-brand-gold text-brand-charcoal px-3 py-1 font-bold text-xs uppercase tracking-widest">
+                    Verified by Locals
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2">
+                <blockquote class="text-white text-xl font-serif italic border-l-4 border-brand-gold pl-5 mb-6 leading-relaxed">
+                    "We live here. We know that Harajuku isn't just Takeshita Street—it's the rooftop forest of Omohara where the wind feels different."
+                </blockquote>
+                <p class="text-brand-muted text-base leading-relaxed">
+                    Stop wasting time searching. For just <strong>$12</strong>, get access to stories and routes that only locals know.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 px-4 bg-brand-dark border-t border-brand-gold/10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-serif text-3xl text-center text-white mb-10">How It Works</h2>
+            
+            <!-- Steps -->
+            <div class="space-y-8 mb-12 max-w-md mx-auto">
+                <div class="flex items-start gap-5">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-brand-charcoal font-bold text-lg">1</div>
+                    <div>
+                        <h3 class="text-white font-bold text-lg">Select & Pay</h3>
+                        <p class="text-sm text-brand-muted mt-1 leading-relaxed">Choose your area below. Secure payment via Stripe ($12).</p>
+                    <a href="https://stripe.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition block">
+                        <img src="assets/Powered by Stripe - white.svg" alt="Powered by Stripe" class="h-6 mx-auto">
+                    </div>
+                </div>
+                <div class="flex items-start gap-5">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-brand-charcoal font-bold text-lg">2</div>
+                    <div>
+                        <h3 class="text-white font-bold text-lg">Start Instantly</h3>
+                        <p class="text-sm text-brand-muted mt-1 leading-relaxed">No app download. The compass opens in your browser immediately.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-5">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-brand-charcoal font-bold text-lg">3</div>
+                    <div>
+                        <h3 class="text-white font-bold text-lg">Walk & Discover</h3>
+                        <p class="text-sm text-brand-muted mt-1 leading-relaxed">Follow the compass. Read historical stories at each stop.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshots -->
+            <div class="relative">
+                <div class="flex overflow-x-auto gap-5 pb-8 px-2 no-scrollbar snap-x">
+                    <div class="snap-center shrink-0 w-[220px]">
+                        <img src="assets/screen-01.webp" alt="Compass Navigation" class="w-full rounded-lg shadow-lg border border-brand-gold/20">
+                        <p class="text-xs text-center text-brand-muted mt-3 uppercase tracking-wide">1. Follow the Compass</p>
+                    </div>
+                    <div class="snap-center shrink-0 w-[220px]">
+                        <img src="assets/screen-02.webp" alt="Map Area" class="w-full rounded-lg shadow-lg border border-brand-gold/20">
+                        <p class="text-xs text-center text-brand-muted mt-3 uppercase tracking-wide">2. Stay in the Zone</p>
+                    </div>
+                    <div class="snap-center shrink-0 w-[220px]">
+                        <img src="assets/screen-03.webp" alt="Historical Story" class="w-full rounded-lg shadow-lg border border-brand-gold/20">
+                        <p class="text-xs text-center text-brand-muted mt-3 uppercase tracking-wide">3. Unlock History</p>
+                    </div>
+                </div>
+                <p class="text-center text-brand-muted text-sm italic opacity-70">← Swipe to see app interface →</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Selection -->
+    <section id="courses" class="py-20 px-5 bg-brand-charcoal border-t border-brand-gold/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl md:text-4xl text-white">Choose Your Area</h2>
+                <p class="text-brand-muted mt-3 text-base">Select a district to begin your exploration.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- SHINJUKU -->
+                <div class="bg-brand-surface rounded-sm overflow-hidden shadow-2xl border border-brand-gold/10 flex flex-col transform hover:scale-[1.01] transition duration-300">
+                    <div class="relative h-56">
+                        <img src="assets/course_shinjuku.jpg" alt="Shinjuku Alleys" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent"></div>
+                        <div class="absolute bottom-3 left-5">
+                            <h3 class="font-serif text-3xl text-white">Shinjuku</h3>
+                            <p class="text-brand-gold text-sm uppercase tracking-widest font-bold">Chaos & Quiet</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <!-- 文字サイズをtext-base (16px)にアップし、可読性を向上 -->
+                        <p class="text-brand-muted text-base mb-6 leading-relaxed">
+                            Dive into the contrast. Visit <strong>Jōkaku-ji</strong>, a temple whispering stories of the Edo period's red-light district, and find peace at <strong>Hanazono Shrine</strong> before wandering the narrow alleys of <strong>Golden Gai</strong>.
+                        </p>
+                        <div class="flex items-center gap-5 text-sm text-brand-muted/90 mb-8 border-t border-brand-muted/20 pt-4">
+                            <span>⏱ 30-60 min</span>
+                            <span>👣 ~2km</span>
+                            <span>🏛 5 Spots</span>
+                        </div>
+                        <a href="https://tokyo-quest.com/en/select?location=Shinjuku" class="block w-full bg-brand-charcoal border border-brand-gold text-brand-gold text-center py-4 text-base font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-charcoal transition duration-300">
+                            Explore ($12)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SHIBUYA -->
+                <div class="bg-brand-surface rounded-sm overflow-hidden shadow-2xl border border-brand-gold/10 flex flex-col transform hover:scale-[1.01] transition duration-300">
+                    <div class="relative h-56">
+                        <img src="assets/course_shibuya.jpg" alt="Shibuya Backstreets" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent"></div>
+                        <div class="absolute bottom-3 left-5">
+                            <h3 class="font-serif text-3xl text-white">Shibuya</h3>
+                            <p class="text-brand-gold text-sm uppercase tracking-widest font-bold">Beyond the Crossing</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <!-- 文字サイズをtext-base (16px)にアップ -->
+                        <p class="text-brand-muted text-base mb-6 leading-relaxed">
+                            Avoid the crowds. Walk the chaotic <strong>Dogenzaka alleys</strong> that originated from post-war black markets. Discover hidden shrines and the "Ura-Shibu" (Back Shibuya) atmosphere that most tourists miss.
+                        </p>
+                        <div class="flex items-center gap-5 text-sm text-brand-muted/90 mb-8 border-t border-brand-muted/20 pt-4">
+                            <span>⏱ 30-60 min</span>
+                            <span>👣 ~2km</span>
+                            <span>🏛 4 Spots</span>
+                        </div>
+                        <a href="https://tokyo-quest.com/en/select?location=Shibuya" class="block w-full bg-brand-charcoal border border-brand-gold text-brand-gold text-center py-4 text-base font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-charcoal transition duration-300">
+                            Explore ($12)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HARAJUKU -->
+                <div class="bg-brand-surface rounded-sm overflow-hidden shadow-2xl border border-brand-gold/10 flex flex-col transform hover:scale-[1.01] transition duration-300">
+                    <div class="relative h-56">
+                        <img src="assets/course_harajuku.jpg" alt="Harajuku Shrine" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent"></div>
+                        <div class="absolute bottom-3 left-5">
+                            <h3 class="font-serif text-3xl text-white">Harajuku</h3>
+                            <p class="text-brand-gold text-sm uppercase tracking-widest font-bold">Silence in the City</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <!-- 文字サイズをtext-base (16px)にアップ -->
+                        <p class="text-brand-muted text-base mb-6 leading-relaxed">
+                            It's not just for teenagers. Escape to the <strong>Rooftop Forest of Omohara</strong> and find the naval history at <strong>Togo Shrine</strong>. A perfect mix of nature, culture, and silence in the heart of fashion.
+                        </p>
+                        <div class="flex items-center gap-5 text-sm text-brand-muted/90 mb-8 border-t border-brand-muted/20 pt-4">
+                            <span>⏱ 30-60 min</span>
+                            <span>👣 ~2km</span>
+                            <span>🏛 5 Spots</span>
+                        </div>
+                        <a href="https://tokyo-quest.com/en/select?location=Harajuku" class="block w-full bg-brand-charcoal border border-brand-gold text-brand-gold text-center py-4 text-base font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-charcoal transition duration-300">
+                            Explore ($12)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GINZA -->
+                <div class="bg-brand-surface rounded-sm overflow-hidden shadow-2xl border border-brand-gold/10 flex flex-col transform hover:scale-[1.01] transition duration-300">
+                    <div class="relative h-56">
+                        <img src="assets/course_ginza.jpg" alt="Ginza Traditional" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent"></div>
+                        <div class="absolute bottom-3 left-5">
+                            <h3 class="font-serif text-3xl text-white">Ginza</h3>
+                            <p class="text-brand-gold text-sm uppercase tracking-widest font-bold">Spirit & Luxury</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <!-- 文字サイズをtext-base (16px)にアップ -->
+                        <p class="text-brand-muted text-base mb-6 leading-relaxed">
+                            Discover Ginza beyond the luxury boutiques. Find the <strong>hidden Inari shrines</strong> tucked between skyscrapers and feel the spirit of traditional theater at <strong>Kabuki-za</strong>.
+                        </p>
+                        <div class="flex items-center gap-5 text-sm text-brand-muted/90 mb-8 border-t border-brand-muted/20 pt-4">
+                            <span>⏱ 30-60 min</span>
+                            <span>👣 ~2km</span>
+                            <span>🏛 4 Spots</span>
+                        </div>
+                        <a href="https://tokyo-quest.com/en/select?location=Ginza" class="block w-full bg-brand-charcoal border border-brand-gold text-brand-gold text-center py-4 text-base font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-charcoal transition duration-300">
+                            Explore ($12)
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <p class="text-center text-sm text-brand-muted mt-10">
+                Secure payment via <span class="text-white font-bold">Stripe</span>. No subscription needed.
+           <a href="https://stripe.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition block">
+                        <img src="assets/Powered by Stripe - white.svg" alt="Powered by Stripe" class="h-6 mx-auto">
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark py-12 px-5 border-t border-brand-gold/10">
+        <div class="max-w-4xl mx-auto flex flex-col justify-center items-center text-brand-muted text-sm gap-6">
+            <div class="text-center">
+                <p class="font-serif text-white text-xl mb-2">TokyoQuest</p>
+                <p class="text-brand-muted/80">Curated by Locals. Designed for Explorers.</p>
+            </div>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-brand-gold transition underline-offset-4 hover:underline">Privacy</a>
+                <a href="#" class="hover:text-brand-gold transition underline-offset-4 hover:underline">Terms</a>
+                <a href="#" class="hover:text-brand-gold transition underline-offset-4 hover:underline">Contact</a>
+            </div>
+            <p class="text-brand-muted/50 text-xs mt-2">&copy; 2026 TokyoQuest. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple Interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.bg-brand-surface, section h2, .p-6');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
